@@ -43,23 +43,25 @@ function SignUp() {
   }
 
   return (
-    <div>
+    <div className="auth-form-container">
 
 
-      <form onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
+        <label className="login-label">Name</label>
         <input 
           placeholder='Fullname'
           name='fullName'
           onChange={handleChange}
         />
-
+  <label className="login-label">Email</label>
         <input 
           placeholder='Email'
           name='email'
           onChange={handleChange}
         />
 
+<label className="login-label">Password</label>
         <input
           placeholder='Password' 
           name='password'

@@ -1,0 +1,239 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+  }
+  
+  /* Container styles */
+  #root {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Navigation styles */
+  .nav {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav a, .nav button {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  .nav a:hover, .nav button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .nav a.active {
+    background-color: #5e72e4;
+    color: white;
+  }
+  
+  .nav button {
+    color: #666;
+  }
+  
+  .nav button:hover {
+    color: #333;
+  }
+  
+  
+  /* Login/Signup page styles */
+  .auth-page {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .login-label {
+    font-size: 14px;
+    color: #999;
+    text-align: left;
+    padding: 8px 0;
+    display: block;
+  }
+  
+  /* Form styles */
+  .auth-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    margin-top: 16px;
+    text-align: left;
+  }
+  
+  .auth-form h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .auth-form input:focus {
+    outline: none;
+    border-color: #5e72e4;
+    box-shadow: 0 0 0 2px rgba(94, 114, 228, 0.2);
+  }
+  
+  .auth-form button {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #5e72e4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .auth-form button:hover {
+    background-color: #4d61c9;
+  }
+  
+  .auth-form p {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .auth-form a {
+    color: #5e72e4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .auth-form a:hover {
+    color: #4d61c9;
+    text-decoration: underline;
+  }
+  
+  /* Welcome header */
+  .welcome-header {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .auth-form {
+      padding: 24px 16px;
+    }
+    
+    .welcome-header {
+      font-size: 24px;
+    }
+  }
+
+  /* Profile CSS*/
+
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-information {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    margin-top: 16px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .profile-label {
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    padding: 8px 0;
+    display: block;
+    font-weight: 500;
+  }
+
+ .edit {
+    width: 10%;
+    padding: 12px 16px;
+    background-color: #5e72e4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 10px;
+  }
+
+  .profile-info {
+    margin: 10px;
+  }
+
+/* Modal CSS */
+.modal-container {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: white;
+    width: 25em;
+}
