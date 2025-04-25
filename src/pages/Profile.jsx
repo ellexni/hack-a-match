@@ -6,9 +6,10 @@ import { useState, useEffect } from "react"
 function Profile({token}) {
 
     const [info, setInfo] = useState([])
+    const [modalOpen, setModalOpen] = useState(false);
 
     async function fetchInfo() {
-        const {data, error} = await supabase.from("profiles").select("*").eq("id", id).single();
+        const {data, error} = await supabase.from("profiles").select("*").eq("id", token.user.id).single();
 
         if (error) console.error(error);
         else setInfo(data);
@@ -45,24 +46,29 @@ function Profile({token}) {
                 
                 <label className="profile-label">Skills</label>
                     <p className="profile-info">
-                        {info?.skills || "No skills added"}
+                        {Array.isArray(info?.skills) && info.skills.length > 0 ? info.skills.join(", ") : "No skills added"}
                     </p>
+                    
                 
                 <label className="profile-label">Preferred Roles</label>
                     <p className="profile-info">
-                        {info?.roles || "No preferred roles added"}
+                    {Array.isArray(info?.roles) && info.roles.length > 0 ? info.roles.join(", ") : "No preferred roles added"}
                     </p>
                 
                 <label className="profile-label">Participating in</label>
                     <p className="profile-info">
-                        {info?.hackathons || "No hackathons added"}
+                    {Array.isArray(info?.hackathons) && info.hackathons.length > 0 ? info.hackathons.join(", ") : "No hackathons added"}
                     </p>
 
                 
             </div>
         
-        <button className="edit">Edit Profile</button>
-        <Modal token={token}/>
+        <button className="edit" onClick={()=> setModalOpen(true)}>Edit Profile</button>
+        {modalOpen && <Modal 
+            token={token}
+            closeModal={() => {
+                setModalOpen(false);}}
+                />}
 
     </div>
   )

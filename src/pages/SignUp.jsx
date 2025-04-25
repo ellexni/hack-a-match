@@ -34,6 +34,26 @@ function SignUp() {
         }
       )
       if (error) throw error
+      
+      const user = data.user;
+      if (user) {
+        const { error: insertError } = await supabase.from("profiles").insert([
+          {
+            id: user.id,
+            bio: "",
+            education: "",
+            skills: [],
+            roles: [],
+            hackathons: [],
+          }
+        ]);
+        if (insertError) {
+          console.error("Insert profile error:", insertError);
+        } else {
+          console.log("Profile created.");
+        }
+      }
+  
       alert('Check your email for verification link')
 
     } catch (error) {
