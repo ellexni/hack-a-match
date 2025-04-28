@@ -1,4 +1,4 @@
-import { supabase } from "../client";
+import { supabase } from "../../backend/client";
 import { useState, useEffect } from "react";
 
 function Modal({ token, closeModal }) {

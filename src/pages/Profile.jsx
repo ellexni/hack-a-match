@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar"
 import Modal from "../components/Modal"
-import { supabase } from "../client";
+import { supabase } from "../../backend/client";
 import { useState, useEffect } from "react"
 
 function Profile({token}) {

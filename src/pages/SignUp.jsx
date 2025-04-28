@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { supabase } from '../client'
+import { supabase } from '../../backend/client'
 import { Link } from 'react-router-dom'
 
 function SignUp() {

@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-src/client.js
+backend
 
 # Editor directories and files
 .vscode/*
