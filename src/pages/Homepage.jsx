@@ -39,7 +39,15 @@ function Homepage({ token }) {
             Preferred Roles: ${profile.roles?.join(", ") || "No roles listed"}
             Hackathons Participating: ${profile.hackathons?.join(", ") || "No hackathons listed"}
 
-            Question: Based on skills, education, and interests, how good of a hackathon team match is ${profile.full_name} for ${myProfile.full_name}? Respond with a number between 0-100, where 0 is no match and 100 is a perfect match.`;
+            Scoring Criteria:
+- Skills overlap: up to 40 points (e.g., 1 shared = ~10 pts, 2+ shared = 30–40)
+- Hackathon participation overlap: up to 30 points (e.g., 1 match = 15 pts, 2 = 30)
+- Similar education: up to 20 points (same university = full points)
+- Preferred roles: award 10 points **only if roles are different**
+- If a category is blank or missing, it scores **0 for that category**, but does **not** cancel other scores.
+- Do not give benefit of the doubt. Be strict, but fair.
+
+Question: How good of a hackathon team match is ${profile.full_name} for ${myProfile.full_name}? Respond with just a number between 0-100.`;
         });
 
       
